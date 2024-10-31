@@ -6,21 +6,18 @@
 int romanCharValue(char r); 
 
 int main() {
- 
-    cout << "Value of I: " << romanCharValue('I') << "\n";
-    cout << "Value of V: " << romanCharValue('V') << "\n"; 
-    cout << "Value of X: " << romanCharValue('X') << "\n"; 
-    cout << "Value of L: " << romanCharValue('L') << "\n";
-    cout << "Value of C: " << romanCharValue('C') << "\n"; 
-    cout << "Value of D: " << romanCharValue('D') << "\n"; 
-    cout << "Value of M: " << romanCharValue('M') << "\n"; 
-    cout << "Value of A: " << romanCharValue('A') << "\n"; 
+    int tot;  
+
+    cout << romanCharValue(tot); 
 
     return 0;
 
 } 
 
-int romanCharValue(char r) {
+int romanCharValue(char r) { 
+
+    int tot; 
+
     switch (r) {
     case 'I': return 1;
     case 'V': return 5;
@@ -30,5 +27,13 @@ int romanCharValue(char r) {
     case 'D': return 500;
     case 'M': return 1000;
     default: return 0; 
+    } 
+
+    while (r >= 1) {
+
+        tot = r + r; 
+       
+
     }
+
 }
