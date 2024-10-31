@@ -1,4 +1,4 @@
-// translate roman numerals to numerical value 
+// translate roman numerals to numerical value. 
  
 #include <iostream>
 #include <string> 
