@@ -1,22 +1,46 @@
-// translate roman numerals to numerical value. 
- 
-#include <iostream>
-#include <string> 
+// translate roman numerals to numerical value 
 
-int romanCharValue(char r); 
+#include <iostream>
+#include <string>  
+
+using namespace std;
+
+int romanCharValue(char r);
 
 int main() {
-    int tot;  
+    int tot = 0;
+    string romanNum;
+    // int val; 
+    cout << "Enter Roman number or Q to quit ";
+    cin >> romanNum;
 
-    cout << romanCharValue(tot); 
+    int len = romanNum.length();
+
+
+    for (int i = 0; i < len; i++) {
+
+        if (romanCharValue(romanNum[i]) >= romanCharValue(romanNum[i + 1]) || len == 1) {
+            tot += romanCharValue(romanNum[i]);
+            cout << "i=" << i << endl;
+            //total += val;
+        }
+        else {
+            tot += romanCharValue(romanNum[i + 1]) - romanCharValue(romanNum[i]);
+            i++;
+        }
+
+    }
+    cout << romanNum << "=" << tot;
+
 
     return 0;
 
-} 
+}
 
-int romanCharValue(char r) { 
+int romanCharValue(char r) {
 
-    int tot; 
+    //    int total = 0;
+
 
     switch (r) {
     case 'I': return 1;
@@ -26,14 +50,31 @@ int romanCharValue(char r) {
     case 'C': return 100;
     case 'D': return 500;
     case 'M': return 1000;
-    default: return 0; 
-    } 
-
-    while (r >= 1) {
-
-        tot = r + r; 
-       
-
+    default: return 0;
     }
+    /*
+        while (r >= 1) {
+            int total = 0;
+
+            if (r >= r || r == 1) {
+
+                total = r + r;
+                r--;
+            }
+            else {
+                total + (r - r);
+                r--;
+            }
+        }
+        //While the roman number string is not empty
+        //If the first character has a larger or equal value than the second,
+        //or the string has length 1
+        //Add value(first character) to total.
+        //Remove the character.
+        //Else
+        //Add the quantity: value(second character) - value(first character) to total.
+        //Remove both characters.
+        */
 
 }
+
